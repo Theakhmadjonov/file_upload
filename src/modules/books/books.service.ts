@@ -18,7 +18,7 @@ export class BooksService {
     if (findBook) throw new ConflictException('Book already exists');
     const url = await this.s3.uploadFile(file, 'books');
     const book = await this.prisma.book.create({
-      data: { ...createBookDto, book_pdf: url as string },
+      data: { ...createBookDto, book_image: url as string },
     });
     const token = await this.Jwt.signAsync({ id: book.id });
     return { book, token };

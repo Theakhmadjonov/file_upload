@@ -24,7 +24,7 @@ model Book {
   description String
   page        Int
   price       Decimal
-  book_pdf    String
+  book_image    String
   book_date   DateTime @default(now())
   createdAt   DateTime @default(now())
   updatedAt   DateTime @updatedAt

@@ -18,14 +18,16 @@ model User {
   @@map("users")
 }
 
-model Movie {
+model Book {
   id          Int      @id @default(autoincrement())
   title       String
   description String
-  poster_url  String
-  file_url    String
+  page        Int
+  price       Decimal
+  book_pdf    String
+  book_date   DateTime @default(now())
   createdAt   DateTime @default(now())
   updatedAt   DateTime @updatedAt
 
-  @@map("movies")
+  @@map("books")
 }
